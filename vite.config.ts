@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import fs from 'node:fs'
 
-// Безопасная загрузка конфигурации Figma (если файла нет в CI, используем пустой объект)
 let siteConfiguration = {}
 const siteJsonPath = path.resolve(__dirname, './.figma/make/site.json')
 if (fs.existsSync(siteJsonPath)) {
@@ -95,7 +94,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Умный навигатор для абитуриентов"
+  const title = config.title ?? "Навигатор для абитуриентов"
   const description = config.description ?? ''
   const favicon = config.icons?.icon ?? ''
   const socialImage = config.openGraph?.image ?? ''
@@ -332,3 +331,4 @@ function figmaMakeKitPlugin(options: { storiesGlob: string | string[] }): Plugin
     },
   }
 }
+
