@@ -1748,7 +1748,7 @@ function CompListScreen({ onNavigate, topBarProps, profile, initialId }: {
               <div key={c.snils + i}>
                 {isBudgetLine && (
                   <div style={{ padding: "5px 12px", background: "#DCFCE7", borderTop: "2px dashed var(--color-green)", borderBottom: "2px dashed var(--color-green)", minWidth: 720 }}>
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: 9, fontWeight: 800, color: "var(--color-green)", letterSpacing: "0.1em" }}>↑ ПОСЛЕДНЕЕ БЮДЖЕТНОЕ МЕСТО ({budgetSeats})</span>
+                    <span style={{ fontFamily: "var(--font-display)", fontSize: 9, fontWeight: 800, color: "var(--color-green)", letterSpacing: "0.1em" }}>↓ ПОСЛЕДНЕЕ БЮДЖЕТНОЕ МЕСТО ({budgetSeats})</span>
                   </div>
                 )}
                 <div style={{ display: "grid", gridTemplateColumns: "38px 148px 100px 64px 54px 110px 82px 76px", minWidth: 720, padding: "9px 12px", gap: 6, alignItems: "center", background: isMe ? "rgba(139,92,246,0.07)" : isPhantom ? "rgba(239,68,68,0.04)" : i % 2 === 0 ? "var(--color-surface)" : "var(--color-bg)", borderBottom: "1px solid var(--color-surface-2)", borderLeft: `4px solid ${isMe ? "var(--color-violet)" : isPhantom ? "rgba(239,68,68,0.3)" : "transparent"}` }}>
