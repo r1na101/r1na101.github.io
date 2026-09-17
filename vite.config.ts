@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import fs from 'node:fs'
 
-// Безопасная загрузка конфигурации Figma (если файла нет в CI, используем пустой объект)
 let siteConfiguration = {}
 const siteJsonPath = path.resolve(__dirname, './.figma/make/site.json')
 if (fs.existsSync(siteJsonPath)) {
