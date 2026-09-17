@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-bg: #F4F4F6;
+  --color-surface: #ffffff;
+  --color-surface-2: #EDEDF0;
+  --color-ink: #0F172A;
+  --color-ink-2: #334155;
+  --color-ink-3: #64748B;
+  --color-border: #0F172A;
+  --color-border-soft: #CBD5E1;
+
+  --color-violet: #8B5CF6;
+  --color-violet-dark: #7C3AED;
+  --color-violet-light: #EDE9FE;
+  --color-blue: #2563EB;
+  --color-blue-dark: #1D4ED8;
+  --color-blue-light: #DBEAFE;
+  --color-green: #10B981;
+  --color-green-light: #D1FAE5;
+  --color-yellow: #F59E0B;
+  --color-yellow-light: #FEF3C7;
+  --color-red: #EF4444;
+  --color-red-light: #FEE2E2;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+body { margin: 0; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+
+/* Cyber card */
+.cyber-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: 0px;
+  position: relative;
+}
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+  pointer-events: none;
+}
+
+/* Neon glow utility */
+.glow-violet { box-shadow: 0 0 0 3px rgba(139,92,246,0.25), 0 4px 24px rgba(139,92,246,0.12); }
+.glow-blue   { box-shadow: 0 0 0 3px rgba(37,99,235,0.2),  0 4px 24px rgba(37,99,235,0.10); }
+
+/* Toggle */
+.toggle-track {
+  width: 44px; height: 24px;
+  background: var(--color-border-soft);
+  border: 2px solid var(--color-border);
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.toggle-track.on { background: var(--color-violet); }
+.toggle-thumb {
+  width: 16px; height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px; left: 2px;
+  transition: transform 0.2s;
+}
+.toggle-track.on .toggle-thumb { transform: translateX(20px); }
+
+/* Scanline overlay for hero */
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.015) 3px,
+    rgba(0,0,0,0.015) 4px
+  );
+}
+
+/* Chance badge */
+.chance-high   { background: #D1FAE5; color: #065F46; border: 2px solid #10B981; }
+.chance-medium { background: #FEF3C7; color: #92400E; border: 2px solid #F59E0B; }
+.chance-low    { background: #FEE2E2; color: #991B1B; border: 2px solid #EF4444; }
+
+/* Stripe pattern for comparison header */
+.stripe-violet {
+  background: repeating-linear-gradient(
+    45deg,
+    #8B5CF6,
+    #8B5CF6 8px,
+    #7C3AED 8px,
+    #7C3AED 16px
+  );
+}
+.stripe-blue {
+  background: repeating-linear-gradient(
+    45deg,
+    #2563EB,
+    #2563EB 8px,
+    #1D4ED8 8px,
+    #1D4ED8 16px
+  );
+}
+
+.flex { display: flex; }
+.items-center { align-items: center; }
+.gap-2 { gap: 0.5rem; }
+
